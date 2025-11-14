@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Starting...</title>
+    <style>
+      html, body { 
+        height: 100%; 
+        margin: 0; 
+        padding: 0; 
+        overflow: hidden; 
+        -ms-overflow-style: none; 
+        scrollbar-width: none; 
+      }
+      ::-webkit-scrollbar { width: 0px; height: 0px; }
+
+      body {
+        margin: 0;
+        font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+      }
+
+      .card {
+        width: 480px;
+        max-width: 90vw;
+        background: white;
+        border-radius: 8px;
+        padding: 32px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        border: 1px solid #e5e7eb;
+        animation: fadeIn 0.3s ease-out;
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+
+      .icon-container {
+        flex-shrink: 0;
+        padding: 12px;
+        background: #eff6ff;
+        border-radius: 9999px;
+        border: 1px solid #dbeafe;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .spinner {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 3px solid rgba(96, 165, 250, 0.2);
+        border-top-color: #2563eb;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+
+      .text-content {
+        flex: 1;
+      }
+
+      .title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #111827;
+        margin: 0 0 4px 0;
+      }
+
+      .subtitle {
+        font-size: 14px;
+        color: #6b7280;
+        margin: 0;
+      }
+
+      .status-section {
+        margin-bottom: 24px;
+      }
+
+      .status-label {
+        font-size: 13px;
+        color: #6b7280;
+        margin-bottom: 8px;
+      }
+
+      .status-value {
+        font-size: 14px;
+        color: #374151;
+        font-weight: 500;
+      }
+
+      .info-box {
+        margin-top: 24px;
+        padding: 12px;
+        background: #f9fafb;
+        border-radius: 6px;
+      }
+
+      .info-text {
+        font-size: 12px;
+        color: #6b7280;
+        margin: 0;
+      }
+
+      .info-text strong {
+        color: #374151;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="header">
+        <div class="icon-container">
+          <div class="spinner"></div>
+        </div>
+        <div class="text-content">
+          <div class="title">Starting Stock Management</div>
+          <div class="subtitle">Please wait while we initialize the application.</div>
+        </div>
+      </div>
+      
+      <div class="status-section">
+        <div class="status-label">Current Status</div>
+        <div class="status-value" id="status">Initializing...</div>
+      </div>
+
+      <div class="info-box">
+        <p class="info-text">
+          💡 <strong>Note:</strong> This window will close automatically when the app is ready.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      window.updateStatus = function (text) {
+        const el = document.getElementById('status');
+        if (el) el.textContent = text;
+      };
+    </script>
+  </body>
+</html>

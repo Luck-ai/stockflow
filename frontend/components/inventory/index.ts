@@ -1,0 +1,1 @@
+export { InventorySummary } from './inventory-summary'
