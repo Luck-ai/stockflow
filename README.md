@@ -117,7 +117,7 @@ The installer is non-one-click, lets the user pick the install path, and creates
 ## 🗂 Project structure
 
 ```text
-inventory-management-system/
+stockflow/
 ├── docker-compose.yaml          # frontend + backend + postgres
 ├── run_main.py                  # ETL entrypoint
 ├── run_api.py / run_api_prod.py # FastAPI entrypoints
@@ -168,6 +168,6 @@ inventory-management-system/
 
 <div align="center">
 
-**Inventory Management System** · [GitHub](https://github.com/Luck-ai/inventory-management-system) · [Issues](https://github.com/Luck-ai/inventory-management-system/issues)
+**Inventory Management System** · [GitHub](https://github.com/Luck-ai/stockflow) · [Issues](https://github.com/Luck-ai/stockflow/issues)
 
 </div>
